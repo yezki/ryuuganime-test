@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2&display=swap');
+
+:root {
+  --light: #f3f3f7;
+  --bg-dark: #222222;
+  --dark: #333;
+}
+
+/* reset */
+
+* {
+  font-family: 'Exo 2', 'Ubuntu', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background-color: var(--light);
+}
+
+body.dark {
+  background-color: var(--bg-dark);
+}
+
+div.container {
+  width: 80vw;
+  margin: auto;
+}
+
+img.logo-on-mobile {
+  width: 50vw;
+  display: block;
+  margin: 20px auto;
+}
+
+nav {
+  position: fixed;
+  bottom: 30px;
+  right: 20px;
+  z-index: 99;
+}
+
+div#navbar > button {
+  background-image: linear-gradient(to right, #eb3349, #f45c43);
+  border: none;
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+div#navbar > button span {
+  width: 1.8rem;
+  height: 3px;
+  border-radius: 50px;
+  display: block;
+  background-color: white;
+  margin: 3px;
+  transition: all 0.3s ease;
+}
+
+div#navbar > button.clicked span:nth-child(1) {
+  position: absolute;
+  transform: rotate(45deg);
+}
+
+div#navbar > button.clicked span:nth-child(2) {
+  opacity: 0;
+}
+
+div#navbar > button.clicked span:nth-child(3) {
+  position: absolute;
+  transform: rotate(-45deg);
+}
+
+div.nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 100vh;
+  background-color: white;
+  overflow: hidden;
+  transition: width 0.3s ease;
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+div.nav.dark {
+  background-color: var(--dark);
+}
+
+div.nav a {
+  text-decoration: none;
+  color: #777;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 50px;
+}
+
+div.nav.dark a {
+  color: #AAA;
+}
+
+div.darkmode {
+  display: flex;
+  align-items: center;
+}
+
+div.darkmode span .darkmode-icon {
+  color: #777;
+  height: 22px;
+  width: 22px;
+  margin: 0 10px;
+}
+
+div.darkmode .darkmode-toggle {
+  width: 40px;
+  height: 20px;
+  border-radius: 50px;
+  border: 1px solid #777;
+}
+
+div.darkmode .darkmode-toggle span {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: block;
+  background-color: #777;
+  transition: float 0.3s ease;
+}
+
+div.nav.dark div.darkmode .darkmode-toggle {
+  background-color: #333;
+  border-color: #AAA;
+}
+
+div.nav.dark div.darkmode .darkmode-toggle span {
+  float: right;
+  background-color: #AAA;
+}
+
+div.nav.dark div.darkmode span .darkmode-icon {
+  color: #AAA;
+}
+
+div.nav.active {
+  width: 90vw;
+}
+
+/* ------------- */
+
+h4.subheading {
+  color: #777;
+  padding: 20px 0;
+}
+
+h4.subheading.dark {
+  color: #AAA;
+}
+
+div.card-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+div.card {
+  height: 190px;
+  border-radius: 5px;
+  overflow: hidden;
+  margin: 5px auto;
+  position: relative;
+  width: 136px;
+}
+
+div.card img {
+  width: 136px;
+}
+
+div.card:hover div.card-title, div.card:focus div.card-title, div.card:active div.card-title {
+  opacity: 1;
+}
+
+div.card-title {
+  position: absolute;
+  bottom: 0;
+  width: inherit;
+  height: auto;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+div.card-title span {
+  text-align: center;
+  padding: 10px 5px;
+  font-size: .8rem;
+}
+
